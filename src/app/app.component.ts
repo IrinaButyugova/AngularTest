@@ -3,7 +3,7 @@ import { Component } from '@angular/core';
 @Component({
     selector: 'my-app',
     template: `<div>
-    <form-dir></form-dir>
+    <form-builder></form-builder>
     </div>`
 })
 export class AppComponent { 
