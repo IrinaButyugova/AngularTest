@@ -3,7 +3,7 @@ import { Component } from '@angular/core';
 @Component({
     selector: 'my-app',
     template: `<div>
-    <get-change-model></get-change-model>
+    <model-validation></model-validation>
     </div>`
 })
 export class AppComponent { 
