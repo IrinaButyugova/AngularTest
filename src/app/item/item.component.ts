@@ -5,7 +5,8 @@ import { ActivatedRoute, ParamMap} from '@angular/router';
     selector: 'item-info',
     template: `<h3>Модель {{id}}</h3>
     <div>Товар: {{product}}</div>
-    <div>Цена: {{price}}</div>`
+    <div>Цена: {{price}}</div>
+    <router-outlet></router-outlet>`
 })
 export class ItemComponent { 
      

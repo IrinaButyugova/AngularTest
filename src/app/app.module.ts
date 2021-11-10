@@ -11,15 +11,23 @@ import { FormDirComponent } from './form-dir/form-dir.component';
 import { GetChangeModelComponent } from './get-change-model/get-change-model.component';
 import { GetSumComponent } from './get-sum/get-sum.component';
 import { HttpServerInteractionComponent } from './http-server-interaction/http-server-interaction.component'
+import { ItemDetailsComponent } from './item/item.details.component';
 import { ItemComponent }   from './item/item.component';
+import { ItemStatComponent } from './item/item.stat.component';
 import { ModelValidationComponent } from './model-validation/model-validation.component';
 import { ReactiveFormsModule } from '@angular/forms';
+
+const itemRoutes: Routes = [
+    { path: 'details', component: ItemDetailsComponent},
+    { path: 'stat', component: ItemStatComponent},
+];
 
 const appRoutes: Routes =[
     { path: '', component: ChangeUserComponent},
     { path: 'getChangeModel', component: GetChangeModelComponent},
     { path: 'getChange', redirectTo: '/getChangeModel', pathMatch:'full'},
     { path: 'item/:id', component: ItemComponent},
+    { path: 'item/:id', component: ItemComponent, children: itemRoutes},
     { path: '**', redirectTo: '/' }
 ];
 
@@ -27,7 +35,8 @@ const appRoutes: Routes =[
     imports:      [ BrowserModule, FormsModule, ReactiveFormsModule, 
         RouterModule.forRoot(appRoutes), HttpClientModule],
     declarations: [ AppComponent, ChangeUserComponent, GetChangeModelComponent, 
-        GetSumComponent, ItemComponent, ModelValidationComponent, FormDirComponent, FormBuilderComponent, 
+        GetSumComponent, ItemDetailsComponent, ItemComponent, ItemStatComponent, 
+        ModelValidationComponent, FormDirComponent, FormBuilderComponent, 
         HttpServerInteractionComponent],
     bootstrap:    [ AppComponent ]
 })
