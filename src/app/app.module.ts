@@ -5,6 +5,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { Routes, RouterModule } from '@angular/router';
 
 import { AppComponent } from './app.component';
+import { CanActivateGuard } from './guards/can-activate.guard';
+import { CanDeactivateGuard } from './guards/can-deactivate.guard';
 import { ChangeUserComponent } from './change-user/change-user.component'; 
 import { FormBuilderComponent } from './form-builder/form-builder.component';
 import { FormDirComponent } from './form-dir/form-dir.component';
@@ -24,7 +26,8 @@ const itemRoutes: Routes = [
 
 const appRoutes: Routes =[
     { path: '', component: ChangeUserComponent},
-    { path: 'getChangeModel', component: GetChangeModelComponent},
+    { path: 'getChangeModel', component: GetChangeModelComponent, 
+canActivate: [ CanActivateGuard ], canDeactivate: [CanDeactivateGuard]},
     { path: 'getChange', redirectTo: '/getChangeModel', pathMatch:'full'},
     { path: 'item/:id', component: ItemComponent},
     { path: 'item/:id', component: ItemComponent, children: itemRoutes},
@@ -38,6 +41,7 @@ const appRoutes: Routes =[
         GetSumComponent, ItemDetailsComponent, ItemComponent, ItemStatComponent, 
         ModelValidationComponent, FormDirComponent, FormBuilderComponent, 
         HttpServerInteractionComponent],
+    providers:    [ CanActivateGuard, CanDeactivateGuard ],
     bootstrap:    [ AppComponent ]
 })
 export class AppModule { }
