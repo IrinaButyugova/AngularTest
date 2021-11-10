@@ -13,7 +13,7 @@ export class HttpServerInteractionComponent implements OnInit {
    
     users: User[]=[];
      
-    constructor(private httpService: HttpService){}
+    constructor(public httpService: HttpService){}
       
     ngOnInit(){
         this.httpService.getUsers().subscribe((data: User[]) => this.users=data);
