@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpService } from '../services/http.service';
-import { User } from './user';
+
+import { User } from '../models/user';
 
 @Component({
     selector: 'http-server-interaction',
@@ -15,6 +16,6 @@ export class HttpServerInteractionComponent implements OnInit {
     constructor(private httpService: HttpService){}
       
     ngOnInit(){
-        this.httpService.getData().subscribe((data: any) => this.users=data["userList"]);
+        this.httpService.getUsers().subscribe((data: User[]) => this.users=data);
     }
 }
