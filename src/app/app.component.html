@@ -6,6 +6,12 @@
         <li class="list-group-item" routerLinkActive="active">
             <a routerLink="/getChangeModel">Получение/изменение модели</a>
         </li>
+        <li class="list-group-item" routerLinkActive="active">
+            <a [routerLink]="['item', 1]">item 1</a>
+        </li>
+        <li class="list-group-item" routerLinkActive="active">
+            <a [routerLink]="['item', 2]">item 2</a>
+        </li>
     </ul>
     <router-outlet></router-outlet>
 </div>
