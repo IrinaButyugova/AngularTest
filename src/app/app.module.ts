@@ -8,6 +8,7 @@ import { AppComponent } from './app.component';
 import { CanActivateGuard } from './guards/can-activate.guard';
 import { CanDeactivateGuard } from './guards/can-deactivate.guard';
 import { ChangeUserComponent } from './change-user/change-user.component'; 
+import { FormatPipe} from './pipes/format.pipe';
 import { FormBuilderComponent } from './form-builder/form-builder.component';
 import { FormDirComponent } from './form-dir/form-dir.component';
 import { GetChangeModelComponent } from './get-change-model/get-change-model.component';
@@ -16,6 +17,7 @@ import { HttpServerInteractionComponent } from './http-server-interaction/http-s
 import { ItemDetailsComponent } from './item/item.details.component';
 import { ItemComponent }   from './item/item.component';
 import { ItemStatComponent } from './item/item.stat.component';
+import { JoinPipe } from './pipes/join.pipe';
 import { ModelValidationComponent } from './model-validation/model-validation.component';
 import { ReactiveFormsModule } from '@angular/forms';
 
@@ -37,10 +39,10 @@ canActivate: [ CanActivateGuard ], canDeactivate: [CanDeactivateGuard]},
 @NgModule({
     imports:      [ BrowserModule, FormsModule, ReactiveFormsModule, 
         RouterModule.forRoot(appRoutes), HttpClientModule],
-    declarations: [ AppComponent, ChangeUserComponent, GetChangeModelComponent, 
+    declarations: [ AppComponent, ChangeUserComponent, FormatPipe, GetChangeModelComponent, 
         GetSumComponent, ItemDetailsComponent, ItemComponent, ItemStatComponent, 
         ModelValidationComponent, FormDirComponent, FormBuilderComponent, 
-        HttpServerInteractionComponent],
+        HttpServerInteractionComponent, JoinPipe],
     providers:    [ CanActivateGuard, CanDeactivateGuard ],
     bootstrap:    [ AppComponent ]
 })

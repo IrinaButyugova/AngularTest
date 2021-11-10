@@ -26,8 +26,11 @@
     </div>
     <div>
         <p>{{phoneTitle.name}} : {{phoneTitle.model}}</p>
-        <p>{{phonePrice.name}} : {{phonePrice.model}}</p>
+        <p>{{phonePrice.name}} : {{phonePrice.model | format}}</p>
         <p>{{phoneCompany.name}} : {{phoneCompany.model}}</p>
     </div>
     <button class="btn btn-primary" (click)="save()">Сохранить</button>
+    <div>{{companies | join}}</div>
+    <div>{{companies | join:1}}</div>
+    <div>{{companies | join:1:3}}</div>
 </div>
