@@ -2,10 +2,12 @@ import { Component } from '@angular/core';
      
 @Component({
     selector: 'my-app',
-    template: `<div>
-    <get-sum></get-sum>
-    <change-user></change-user>
-    </div>`
+    templateUrl: './app.component.html',
+    styles:[` 
+    .nav{ clear: both;}
+    a {float: left;}
+    .active a { color: red;}
+`]
 })
 export class AppComponent { 
     name= '';

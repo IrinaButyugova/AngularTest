@@ -1,5 +1,5 @@
 import { Component} from '@angular/core';
-import { NgModel} from '@angular/forms';
+import { NgModel } from '@angular/forms';
  
 export class Phone{
     constructor(public title: string, 
