@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { ReactiveFormsModule } from '@angular/forms';
 import { Routes, RouterModule } from '@angular/router';
 
 import { AppComponent } from './app.component';
@@ -19,7 +20,7 @@ import { ItemComponent }   from './item/item.component';
 import { ItemStatComponent } from './item/item.stat.component';
 import { JoinPipe } from './pipes/join.pipe';
 import { ModelValidationComponent } from './model-validation/model-validation.component';
-import { ReactiveFormsModule } from '@angular/forms';
+import { UsersComponent } from './users/users.component';
 
 const itemRoutes: Routes = [
     { path: 'details', component: ItemDetailsComponent},
@@ -42,7 +43,7 @@ canActivate: [ CanActivateGuard ], canDeactivate: [CanDeactivateGuard]},
     declarations: [ AppComponent, ChangeUserComponent, FormatPipe, GetChangeModelComponent, 
         GetSumComponent, ItemDetailsComponent, ItemComponent, ItemStatComponent, 
         ModelValidationComponent, FormDirComponent, FormBuilderComponent, 
-        HttpServerInteractionComponent, JoinPipe],
+        HttpServerInteractionComponent, JoinPipe, UsersComponent ],
     providers:    [ CanActivateGuard, CanDeactivateGuard ],
     bootstrap:    [ AppComponent ]
 })
